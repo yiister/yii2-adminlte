@@ -1,0 +1,40 @@
+{
+  "name": "yiister/yii2-adminlte",
+  "description": "Yii framework 2 admin theme based on AdminLTE",
+  "keywords": [
+    "yii2",
+    "back-end",
+    "admin",
+    "template",
+    "theme",
+    "backend",
+    "AdminLTE"
+  ],
+  "homepage": "http://adminlte.yiister.ru",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pavel Fedotov",
+      "email": "fps.06@mail.ru",
+      "homepage": "https://github.com/fps01",
+      "role": "Creator"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/yiister/yii2-adminlte/issues",
+    "source": "https://github.com/yiister/yii2-adminlte"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": ">=2.0.5",
+    "yiisoft/yii2-bootstrap": "*",
+    "rmrevin/yii2-fontawesome": "2.12.*",
+    "almasaeed2010/adminlte": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "yiister\\adminlte\\": ""
+    }
+  }
+}
