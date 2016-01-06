@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @var $content string
+ */
+
 use yii\helpers\Html;
 
 yiister\adminlte\assets\Asset::register($this);
@@ -88,7 +92,7 @@ desired effect
                                         <a href="#">
                                             <div class="pull-left">
                                                 <!-- User Image -->
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="http://placehold.it/160x160" class="img-circle" alt="User Image">
                                             </div>
                                             <!-- Message title and timestamp -->
                                             <h4>
@@ -167,14 +171,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="http://placehold.it/160x160" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="http://placehold.it/160x160" class="img-circle" alt="User Image">
                                 <p>
                                     Alexander Pierce - Web Developer
                                     <small>Member since Nov. 2012</small>
@@ -244,61 +248,63 @@ desired effect
             <?=
             \yiister\adminlte\widgets\Menu::widget(
                 [
-                    'items' => [
-                      ['label' => 'Home', 'url' => '/'],
-                      ['label' => 'Layout', 'url' => 'site/layout'],
-                      [
-                          'label' => 'Widgets',
-                          'url' => '#',
-                          'items' => [
-                              ['label' => 'Menu', 'url' => ['site/menu']],
-                              ['label' => 'Boxes', 'url' => ['site/boxes']],
-                          ],
-                      ],
-                      [
-                          'label' => 'Badges',
-                          'url' => ['#'],
-                          'icon' => 'table',
-                          'items' => [
-                              [
-                                  'label' => 'Default',
-                                  'url' => ['#'],
-                                  'icon' => 'table',
-                                  'badge' => '123',
-                              ],
-                              [
-                                  'label' => 'Red',
-                                  'url' => ['#'],
-                                  'icon' => 'table',
-                                  'badge' => '123',
-                                  'badgeOptions' => [
-                                      'class' => \yiister\adminlte\components\AdminLTE::BG_BLUE_ACTIVE,
-                                  ],
-                              ],
-                          ],
-                      ],
+                    "items" => [
+                        ["label" => "Home", "url" => "/", "icon" => "home"],
+                        ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
+                        ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
                         [
-                            'label' => 'Multilevel',
-                            'url' => ['#'],
-                            'icon' => 'table',
-                            'items' => [
+                            "label" => "Widgets",
+                            "icon" => "th",
+                            "url" => "#",
+                            "items" => [
+                                ["label" => "Menu", "url" => ["site/menu"]],
+                                ["label" => "Boxes", "url" => ["site/boxes"]],
+                            ],
+                        ],
+                        [
+                            "label" => "Badges",
+                            "url" => "#",
+                            "icon" => "table",
+                            "items" => [
                                 [
-                                    'label' => 'Second level',
-                                    'url' => ['#'],
+                                    "label" => "Default",
+                                    "url" => "#",
+                                    "icon" => "table",
+                                    "badge" => "123",
                                 ],
                                 [
-                                    'label' => 'Another second level',
-                                    'url' => ['#'],
-                                    'icon' => 'table',
-                                    'items' => [
+                                    "label" => "Red",
+                                    "url" => "#",
+                                    "icon" => "table",
+                                    "badge" => "123",
+                                    "badgeOptions" => [
+                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE_ACTIVE,
+                                    ],
+                                ],
+                            ],
+                        ],
+                        [
+                            "label" => "Multilevel",
+                            "url" => "#",
+                            "icon" => "table",
+                            "items" => [
+                                [
+                                    "label" => "Second level",
+                                    "url" => "#",
+                                ],
+                                [
+                                    "label" => "Second level",
+                                    "url" => "#",
+                                    "icon" => "table",
+                                    "items" => [
                                         [
-                                            'label' => 'Default',
-                                            'url' => ['#'],
+                                            "label" => "Default",
+                                            "url" => "#",
                                         ],
                                         [
-                                            'label' => 'Red',
-                                            'url' => ['#'],
-                                            'icon' => 'table',
+                                            "label" => "Red",
+                                            "url" => "#",
+                                            "icon" => "table",
                                         ],
                                     ],
                                 ],
@@ -308,19 +314,6 @@ desired effect
                 ]
             )
             ?>
-            <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-                </li>
-            </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
     </aside>
@@ -330,8 +323,7 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Page Header
-                <small>Optional description</small>
+                <?= Html::encode(isset($this->params['h1']) ? $this->params['h1'] : $this->title) ?>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -352,7 +344,7 @@ desired effect
             Anything you want
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; <a href="http://yiister.ru">Yiister</a> <?= date("Y") ?>
     </footer>
 
     <!-- Control Sidebar -->
