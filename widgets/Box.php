@@ -20,6 +20,11 @@ class Box extends Widget
     const TYPE_WARNING = 'warning';
 
     /**
+     * @var string tools buttons
+     */
+    protected $tools;
+
+    /**
      * @var string header text
      */
     public $header;
@@ -36,23 +41,65 @@ class Box extends Widget
     public $type = 'default';
 
     /**
+     * @var bool is expandable
+     */
+    public $expandable = false;
+
+    /**
+     * @var bool is collapsable
+     */
+    public $collapsable = false;
+
+    /**
+     * @var bool is removable
+     */
+    public $removable = false;
+
+    protected function initTools()
+    {
+        if ($this->expandable || $this->collapsable) {
+            $this->tools .= Html::button(
+                new Icon($this->expandable ? 'plus' : 'minus'),
+                [
+                    'class' => 'btn btn-box-tool',
+                    'data-widget' => 'collapse',
+                ]
+            );
+            if ($this->expandable) {
+                Html::addCssClass($this->options, 'collapsed-box');
+            }
+        }
+        if ($this->removable) {
+            $this->tools .= Html::button(
+                new Icon('times'),
+                [
+                    'class' => 'btn btn-box-tool',
+                    'data-widget' => 'remove',
+                ]
+            );
+        }
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
     {
         parent::init();
+        $this->initTools();
         Html::addCssClass($this->options, 'box box-' . $this->type);
         echo Html::beginTag('div', $this->options);
         if (isset($this->header)) {
+            echo Html::beginTag('div', ['class' => 'box-header']);
             echo Html::tag(
-                'div',
-                Html::tag(
-                    'h3',
-                    (isset($this->icon) ? new Icon($this->icon) . '&nbsp;' : '') . $this->header,
-                    ['class' => 'box-title']
-                ),
-                ['class' => 'box-header']
+                'h3',
+                (isset($this->icon) ? new Icon($this->icon) . '&nbsp;' : '') . $this->header,
+                ['class' => 'box-title']
             );
+            if (!empty($this->tools)) {
+                echo Html::tag('div', $this->tools, ['class' => 'box-tools pull-right']);
+            }
+            echo Html::endTag('div');
         }
         echo Html::beginTag('div', ['class' => 'box-body']);
     }
