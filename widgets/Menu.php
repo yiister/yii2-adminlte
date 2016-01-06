@@ -16,12 +16,12 @@ class Menu extends \yii\widgets\Menu
     /**
      * @inheritdoc
      */
-    public $labelTemplate = '<span>{label}</span>';
+    public $labelTemplate = '{label}';
 
     /**
      * @inheritdoc
      */
-    public $linkTemplate = '<a href="{url}">{icon}{label}{badge}</a>';
+    public $linkTemplate = '<a href="{url}">{icon}<span>{label}</span>{badge}</a>';
 
     /**
      * @inheritdoc
