@@ -55,6 +55,11 @@ class Box extends Widget
      */
     public $removable = false;
 
+    /**
+     * @var bool is filled
+     */
+    public $filled = false;
+
     protected function initTools()
     {
         if ($this->expandable || $this->collapsable) {
@@ -88,6 +93,9 @@ class Box extends Widget
         parent::init();
         $this->initTools();
         Html::addCssClass($this->options, 'box box-' . $this->type);
+        if ($this->filled) {
+            Html::addCssClass($this->options, 'box-solid');
+        }
         echo Html::beginTag('div', $this->options);
         if (isset($this->header)) {
             echo Html::beginTag('div', ['class' => 'box-header']);
