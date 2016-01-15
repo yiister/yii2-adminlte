@@ -51,6 +51,9 @@ class FlashAlert extends Widget
      */
     public $showHeader = false;
 
+    /**
+     * @inheritdoc
+     */
     public function run()
     {
         if (!isset($this->options['id'])) {
