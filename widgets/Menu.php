@@ -31,6 +31,11 @@ class Menu extends \yii\widgets\Menu
     /**
      * @inheritdoc
      */
+    public $activateParents = true;
+
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         Html::addCssClass($this->options, 'sidebar-menu');
