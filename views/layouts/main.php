@@ -259,6 +259,8 @@ desired effect
                             "items" => [
                                 ["label" => "Menu", "url" => ["site/menu"]],
                                 ["label" => "Boxes", "url" => ["site/boxes"]],
+                                ["label" => "FlashAlert", "url" => ["site/flash-alert"]],
+                                ["label" => "Callouts", "url" => ["site/callouts"]],
                             ],
                         ],
                         [
@@ -325,10 +327,20 @@ desired effect
             <h1>
                 <?= Html::encode(isset($this->params['h1']) ? $this->params['h1'] : $this->title) ?>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>
+            <?php if (isset($this->params['breadcrumbs'])): ?>
+                <?=
+                \yii\widgets\Breadcrumbs::widget(
+                    [
+                        'encodeLabels' => false,
+                        'homeLink' => [
+                            'label' => new \rmrevin\yii\fontawesome\component\Icon('home') . ' Home',
+                            'url' => '/',
+                        ],
+                        'links' => $this->params['breadcrumbs'],
+                    ]
+                )
+                ?>
+            <?php endif; ?>
         </section>
 
         <!-- Main content -->
