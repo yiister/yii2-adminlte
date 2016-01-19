@@ -275,12 +275,12 @@ desired effect
                                     "badge" => "123",
                                 ],
                                 [
-                                    "label" => "Red",
+                                    "label" => "Blue",
                                     "url" => "#",
                                     "icon" => "table",
                                     "badge" => "123",
                                     "badgeOptions" => [
-                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE_ACTIVE,
+                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE,
                                     ],
                                 ],
                             ],

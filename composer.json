@@ -1,6 +1,6 @@
 {
   "name": "yiister/yii2-adminlte",
-  "description": "Yii framework 2 admin theme based on AdminLTE",
+  "description": "yii2-adminlte is a package for yii framework 2 that consists a very popular backend template AdminLTE (based on bootstrap 3).",
   "keywords": [
     "yii2",
     "back-end",
@@ -8,7 +8,8 @@
     "template",
     "theme",
     "backend",
-    "AdminLTE"
+    "AdminLTE",
+    "bootstrap 3"
   ],
   "homepage": "http://adminlte.yiister.ru",
   "type": "yii2-extension",
