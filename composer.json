@@ -31,7 +31,8 @@
     "yiisoft/yii2": ">=2.0.5",
     "yiisoft/yii2-bootstrap": "*",
     "rmrevin/yii2-fontawesome": "2.12.*",
-    "almasaeed2010/adminlte": "~2.0"
+    "almasaeed2010/adminlte": "~2.0",
+    "bower-asset/datatables": "*"
   },
   "autoload": {
     "psr-4": {

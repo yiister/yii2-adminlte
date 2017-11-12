@@ -9,7 +9,7 @@ namespace yiister\adminlte\widgets\grid;
 
 class GridViewAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@vendor/almasaeed2010/adminlte/plugins/datatables';
+    public $sourcePath = '@bower/datatables/media/css';
     public $css = [
         'dataTables.bootstrap.css',
     ];
