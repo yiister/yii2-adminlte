@@ -30,7 +30,7 @@
     "php": ">=5.4.0",
     "yiisoft/yii2": ">=2.0.5",
     "yiisoft/yii2-bootstrap": "*",
-    "rmrevin/yii2-fontawesome": "2.12.*",
+    "rmrevin/yii2-fontawesome": "2.17.*",
     "almasaeed2010/adminlte": "~2.0",
     "bower-asset/datatables": "*"
   },
